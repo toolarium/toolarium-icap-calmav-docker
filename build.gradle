@@ -1,0 +1,17 @@
+/*
+ * build.gradle
+ *
+ * Copyright by toolarium-icap-calmav-docker, all rights reserved.
+ * MIT License: https://mit-license.org
+ */
+apply from: "https://raw.githubusercontent.com/toolarium/common-gradle-build/master/gradle/common.gradle"
+
+
+/****************************************************************************************
+ * Define project dependencies
+ ****************************************************************************************/
+dependencies {
+    // see https://docs.gradle.org/current/userguide/java_library_plugin.html
+
+    // e.g.: implementation 'net.sf.jptools:jptools:1.7.7'
+}
