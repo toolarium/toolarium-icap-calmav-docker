@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y c-icap libicapapi-dev clamav curl less vim libc-icap-mod-virus-scan && \
@@ -7,7 +7,7 @@ RUN apt-get update && \
     touch /var/run/c-icap/c-icap.id && \
     chown -R c-icap:c-icap /var/run/c-icap && \
     /usr/bin/freshclam && \
-    chown -R c-icap:c-icap /etc/c-icap/ && \
+    chmod 666 /var/log/clamav/freshclam.log && \
     echo "acl all src 0.0.0.0/0.0.0.0" >> /etc/c-icap/c-icap.conf && \
     echo "icap_access allow all" >> /etc/c-icap/c-icap.conf && \
     echo "Include /etc/c-icap/virus_scan.conf" >> /etc/c-icap/c-icap.conf && \
